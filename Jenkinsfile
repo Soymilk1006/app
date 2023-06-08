@@ -50,7 +50,7 @@ pipeline {
             steps {
                 script {
                     echo "building image"
-                    buildImage()
+                    buildImage 'legendlight/docker_image:jar-1.0'
                   
                 }
             }
