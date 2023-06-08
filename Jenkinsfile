@@ -32,6 +32,7 @@ pipeline {
                   script {
                         echo "Testing the application..."
                         echo "Executing pipeline for branch"
+                        echo "send notice to jenkins"
                   }
               }
               }
