@@ -1,4 +1,10 @@
-@Library('jenkins-shared-library')
+library identifier:'jenkins-shared-library@master', retriever:modernSCM(
+    [$class:'GitSCMSource',
+     remote:'https://github.com/Soymilk1006/jenkins-shared-library.git',
+     credentialsId:'Github'
+    ]                                                                                                                                                                                                               
+)
+
 def gv
 
 
