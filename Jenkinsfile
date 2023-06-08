@@ -18,6 +18,16 @@ pipeline {
                 }
             }
         }
+        
+        stage("test){
+              steps {
+                  script {
+                        echo "Testing the application..."
+                        echo "Executing pipeline for branch"
+                  }
+              }
+              }
+              
         stage("build jar") {
             steps {
                 script {
@@ -27,6 +37,11 @@ pipeline {
             }
         }
         stage("build image") {
+            when {
+                expression {
+                    BRANCH_NAME == 'master'
+                }
+                
             steps {
                 script {
                     echo "building image"
