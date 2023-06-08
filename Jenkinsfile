@@ -34,6 +34,7 @@ pipeline {
             steps {
                 script {
                     echo "building jar"
+                      buildJar()
               
                 }
             }
@@ -43,7 +44,7 @@ pipeline {
             when {
                 expression {
                     BRANCH_NAME == 'master'
-                    buildJar()
+                  
                 }
             }
                 
