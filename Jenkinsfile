@@ -51,6 +51,8 @@ pipeline {
                 script {
                     echo "building image"
                     buildImage 'legendlight/docker_image:jar-1.0'
+                    dockerLogin()
+                    dockerPush 'legendlight/docker_image:jar-1.0'
                   
                 }
             }
