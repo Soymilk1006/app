@@ -59,16 +59,9 @@ pipeline {
             }
         }
         stage("deploy") {
-            input {
-                message "Start deploying .."
-                ok "Done"
-                parameters {
-                    choice(name:'ENV', choices:['dev','staging','pro'],description: '')
-                }
-            }
             steps {
                 script {
-                    echo "deploying ${ENV}"
+                    echo "deploying..."
                     gv.deployApp()
                 }
             }
