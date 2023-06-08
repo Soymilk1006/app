@@ -1,4 +1,6 @@
+@Library('jenkins-shared-library')
 def gv
+
 
 pipeline {
     agent any
@@ -32,7 +34,7 @@ pipeline {
             steps {
                 script {
                     echo "building jar"
-                    gv.buildJar()
+              
                 }
             }
         }
@@ -41,13 +43,15 @@ pipeline {
             when {
                 expression {
                     BRANCH_NAME == 'master'
+                    buildJar()
                 }
             }
                 
             steps {
                 script {
                     echo "building image"
-                    gv.buildImage()
+                    buildImage()
+                  
                 }
             }
         }
